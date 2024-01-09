@@ -22,7 +22,6 @@ export const registrationAPI = createAsyncThunk(
         error: 'Error',
       });
       setAuthHeader(data.token);
-      console.log(data);
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
