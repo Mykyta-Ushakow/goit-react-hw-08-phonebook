@@ -28,6 +28,8 @@ function LogInPage() {
       <Link type="button" to="/">
         {'<- Back to Home'}
       </Link>
+      <h2>Log in here</h2>
+
       <div className="login-form-section">
         <label htmlFor="exampleInputEmail1">Your email address</label>
         <input

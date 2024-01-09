@@ -26,6 +26,8 @@ function RegisterPage() {
         {'<- Back to Home'}
       </Link>
 
+      <h2>Sign up here</h2>
+
       <div className="login-form-section">
         <label htmlFor="exampleInputEmail1">Your email address</label>
         <input

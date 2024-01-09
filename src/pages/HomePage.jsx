@@ -1,9 +1,4 @@
-import { loginAPI, registrationAPI } from 'api/auth';
-import { ContactForm } from 'components/ContactForm/ContactForm';
-import { ContactList } from 'components/ContactForm/ContactList/ContactList';
-import { Filter } from 'components/Filter/Filter';
 import Header from 'components/Header/Header';
-import UserMenu from 'components/Header/UserMenu/UserMenu';
 
 import React from 'react';
 import { useSelector } from 'react-redux';

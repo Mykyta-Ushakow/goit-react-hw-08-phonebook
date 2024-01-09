@@ -36,7 +36,7 @@ export const AppDiv = styled('div')`
       align-content: center;
       flex-wrap: wrap;
       margin-right: 30px;
-      gap: 10px;
+      gap: 30px;
 
       button {
         margin: auto 0;
@@ -52,7 +52,7 @@ export const AppDiv = styled('div')`
 
     .home-navigation-menu {
       display: flex;
-      gap: 20px;
+      gap: 30px;
     }
   }
 
@@ -116,5 +116,10 @@ export const AppDiv = styled('div')`
     height: 100%;
     font-size: 20px;
     border-radius: 15px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: orangered;
   }
 `;

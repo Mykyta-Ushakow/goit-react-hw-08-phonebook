@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { contactsSelector } from './../../store/selectors';
 import { addContactAPI } from 'store/operations/contactsOpps';
+import toast from 'react-hot-toast';
 
 export const ContactForm = () => {
   const contactsState = useSelector(contactsSelector);
@@ -17,7 +18,7 @@ export const ContactForm = () => {
         contact => contact.name.toLowerCase() === name.toLowerCase()
       )
     ) {
-      alert(`${name} is already in contacts`);
+      toast.error(`${name} is already in contacts`);
       return;
     }
 
