@@ -4,31 +4,25 @@ import {
   contactsErrorSelector,
   contactsLoadingSelector,
   contactsSelector,
-  filterSelector,
+  visibleContactsSelector,
 } from 'store/selectors';
 import { useEffect } from 'react';
-import { fetchContacts } from 'store/operations';
+import { fetchContactsAPI } from 'store/operations/contactsOpps';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
 
-  const filterState = useSelector(filterSelector);
   const contacts = useSelector(contactsSelector);
 
   const isLoading = useSelector(contactsLoadingSelector);
   const error = useSelector(contactsErrorSelector);
+  const visibleContacts = useSelector(visibleContactsSelector);
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(fetchContactsAPI());
   }, [dispatch]);
 
-  const filteredContacts = contacts.length
-    ? contacts.filter(contact =>
-        contact.name.toLowerCase().includes(filterState.toLowerCase())
-      )
-    : [];
-  /* {isLoading && <b>Loading contacts...</b>}
-    {error && <b>{error}</b>} */
+  const filteredContacts = contacts.length ? visibleContacts : [];
 
   return isLoading ? (
     <b>Loading contacts...</b>

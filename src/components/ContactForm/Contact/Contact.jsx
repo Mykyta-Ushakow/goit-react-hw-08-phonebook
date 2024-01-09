@@ -1,13 +1,13 @@
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'store/operations';
+import { deleteContactAPI } from 'store/operations/contactsOpps';
 
 export const Contact = props => {
   const dispatch = useDispatch();
 
   function handleDelete(e) {
-    const idToDelete = Number(e.target.attributes.dataid.value);
+    const idToDelete = e.target.attributes.dataid.value;
 
-    dispatch(deleteContact(idToDelete));
+    dispatch(deleteContactAPI(idToDelete));
   }
 
   return (

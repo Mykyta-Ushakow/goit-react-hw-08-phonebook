@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { contactsSelector } from './../../store/selectors';
-import { addContact } from 'store/operations';
+import { addContactAPI } from 'store/operations/contactsOpps';
 
 export const ContactForm = () => {
   const contactsState = useSelector(contactsSelector);
@@ -23,7 +23,7 @@ export const ContactForm = () => {
 
     const newContact = { name, number };
 
-    dispatch(addContact(newContact));
+    dispatch(addContactAPI(newContact));
 
     e.target.name.value = '';
     e.target.number.value = '';
