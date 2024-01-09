@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Contact } from '../Contact/Contact';
 import {
   contactsErrorSelector,
@@ -6,21 +6,13 @@ import {
   contactsSelector,
   visibleContactsSelector,
 } from 'store/selectors';
-import { useEffect } from 'react';
-import { fetchContactsAPI } from 'store/operations/contactsOpps';
 
 export const ContactList = () => {
-  const dispatch = useDispatch();
-
   const contacts = useSelector(contactsSelector);
 
   const isLoading = useSelector(contactsLoadingSelector);
   const error = useSelector(contactsErrorSelector);
   const visibleContacts = useSelector(visibleContactsSelector);
-
-  useEffect(() => {
-    dispatch(fetchContactsAPI());
-  }, [dispatch]);
 
   const filteredContacts = contacts.length ? visibleContacts : [];
 
