@@ -1,11 +1,18 @@
 import Header from 'components/Header/Header';
 
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { refreshUserAPI } from 'store/operations/authOpps';
 import { isAuthSelector } from 'store/selectors';
 
 function HomePage() {
   const isAuth = useSelector(isAuthSelector);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(refreshUserAPI());
+  }, [dispatch]);
 
   return (
     <>
